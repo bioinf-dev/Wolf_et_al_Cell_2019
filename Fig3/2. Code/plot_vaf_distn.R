@@ -1,0 +1,20 @@
+rm(list=ls(all=TRUE))
+library(ggpubr)
+library(ggplot2)
+library(cowplot)
+library(nlme)
+library(plyr)
+require(reshape2)
+library(gridExtra)
+library(cowplot)
+library(survival)
+library('survminer')
+library(scales)
+library('dplyr')
+library(ggbeeswarm)
+
+dat<-read.table("yardena/Riaz_analysis/final_data/Fig3/for_vaf_distn_plots.txt",header=T)
+cbPalette <- c("#56B4E9", "#009E73", "#F0E442", "#0072B2", "#D55E00", "#CC79A7","#000000", "#E69F00", "#56B4E9", "#009E73", "#F0E442", "#0072B2", "#D55E00", "#CC79A7","#999999", "#E69F00", "#56B4E9", "#009E73", "#F0E442", "#0072B2", "#D55E00", "#CC79A7","#000000", "#E69F00")
+
+ggplot(dat, aes(x=as.numeric(log2.VAF.),)) +geom_density(alpha=.4,aes(colour=Sample),size=1.5)+ylab("kernal density estimate") + xlab("Log2(Variant Allele Frequency)")+theme(text = element_text(size=15),axis.text.x = element_text(size=15),axis.text.y = element_text(size=15))+scale_x_continuous()+theme_classic()+scale_color_manual(values = cbPalette)
+
