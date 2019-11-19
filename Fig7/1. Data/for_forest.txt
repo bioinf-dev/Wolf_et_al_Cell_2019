@@ -1,0 +1,5 @@
+Study	OR	lower	upper
+VA	0.98	0.47	2.06 
+Hugo	4.29	0.77	23.79 
+Riaz	2.24	0.91	5.49 
+Synder	8.75	1.84	41.63
